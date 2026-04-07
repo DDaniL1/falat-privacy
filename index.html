@@ -1,469 +1,919 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="hu">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Falat – Adatkezelési Tájékoztató / Privacy Policy</title>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Falat – Adatkezelési Tájékoztató / Privacy Policy</title>
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
 
-    :root {
-      --brand: #C2410C;
-      --brand-light: #FEF0EB;
-      --brand-dark: #9A3409;
-      --text: #1a1a1a;
-      --muted: #6b7280;
-      --border: #e5e7eb;
-      --bg: #ffffff;
-      --surface: #f9fafb;
-    }
+      :root {
+        --brand: #c2410c;
+        --brand-light: #fef0eb;
+        --brand-dark: #9a3409;
+        --text: #1a1a1a;
+        --muted: #6b7280;
+        --border: #e5e7eb;
+        --bg: #ffffff;
+        --surface: #f9fafb;
+      }
 
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-      color: var(--text);
-      background: var(--bg);
-      line-height: 1.7;
-      font-size: 16px;
-    }
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+          Arial, sans-serif;
+        color: var(--text);
+        background: var(--bg);
+        line-height: 1.7;
+        font-size: 16px;
+      }
 
-    /* ── Header ─────────────────────────────────────────────────────────────── */
-    header {
-      background: var(--brand);
-      color: #fff;
-      padding: 32px 24px 28px;
-      text-align: center;
-    }
+      /* ── Header ─────────────────────────────────────────────────────────────── */
+      header {
+        background: var(--brand);
+        color: #fff;
+        padding: 32px 24px 28px;
+        text-align: center;
+      }
 
-    header .app-name {
-      font-size: 2rem;
-      font-weight: 800;
-      letter-spacing: -0.5px;
-    }
+      header .app-name {
+        font-size: 2rem;
+        font-weight: 800;
+        letter-spacing: -0.5px;
+      }
 
-    header .tagline {
-      margin-top: 4px;
-      font-size: 0.95rem;
-      opacity: 0.85;
-    }
+      header .tagline {
+        margin-top: 4px;
+        font-size: 0.95rem;
+        opacity: 0.85;
+      }
 
-    /* ── Language toggle ─────────────────────────────────────────────────────── */
-    .lang-bar {
-      background: var(--brand-light);
-      border-bottom: 1px solid #f0d5cb;
-      display: flex;
-      justify-content: center;
-      gap: 8px;
-      padding: 12px 24px;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
+      /* ── Language toggle ─────────────────────────────────────────────────────── */
+      .lang-bar {
+        background: var(--brand-light);
+        border-bottom: 1px solid #f0d5cb;
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        padding: 12px 24px;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
 
-    .lang-btn {
-      background: none;
-      border: 2px solid var(--brand);
-      border-radius: 6px;
-      color: var(--brand);
-      cursor: pointer;
-      font-size: 0.875rem;
-      font-weight: 600;
-      padding: 6px 20px;
-      transition: background 0.15s, color 0.15s;
-    }
-
-    .lang-btn.active,
-    .lang-btn:hover {
-      background: var(--brand);
-      color: #fff;
-    }
-
-    /* ── Layout ──────────────────────────────────────────────────────────────── */
-    .container {
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 40px 24px 80px;
-    }
-
-    /* ── Content sections ────────────────────────────────────────────────────── */
-    .lang-section { display: none; }
-    .lang-section.visible { display: block; }
-
-    .doc-title {
-      font-size: 1.5rem;
-      font-weight: 800;
-      color: var(--brand);
-      margin-bottom: 6px;
-    }
-
-    .doc-meta {
-      font-size: 0.875rem;
-      color: var(--muted);
-      margin-bottom: 32px;
-      padding-bottom: 20px;
-      border-bottom: 2px solid var(--brand-light);
-    }
-
-    .doc-meta span + span::before {
-      content: ' · ';
-    }
-
-    h2 {
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: var(--brand-dark);
-      margin-top: 36px;
-      margin-bottom: 12px;
-      padding-bottom: 6px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    h3 {
-      font-size: 0.975rem;
-      font-weight: 700;
-      color: var(--text);
-      margin-top: 20px;
-      margin-bottom: 8px;
-    }
-
-    p {
-      margin-bottom: 12px;
-      color: #374151;
-    }
-
-    ul {
-      margin: 8px 0 16px 20px;
-      color: #374151;
-    }
-
-    ul li {
-      margin-bottom: 6px;
-    }
-
-    /* ── Info card ───────────────────────────────────────────────────────────── */
-    .info-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-left: 4px solid var(--brand);
-      border-radius: 8px;
-      padding: 16px 20px;
-      margin-bottom: 24px;
-    }
-
-    .info-card .label {
-      font-size: 0.75rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--muted);
-      margin-bottom: 8px;
-    }
-
-    .info-card .row {
-      display: flex;
-      gap: 8px;
-      font-size: 0.9rem;
-      margin-bottom: 4px;
-    }
-
-    .info-card .row strong {
-      min-width: 120px;
-      color: var(--muted);
-      font-weight: 500;
-    }
-
-    /* ── Table ───────────────────────────────────────────────────────────────── */
-    .data-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.9rem;
-      margin: 12px 0 20px;
-    }
-
-    .data-table th {
-      background: var(--brand);
-      color: #fff;
-      font-weight: 600;
-      padding: 10px 14px;
-      text-align: left;
-    }
-
-    .data-table td {
-      padding: 9px 14px;
-      border-bottom: 1px solid var(--border);
-      vertical-align: top;
-    }
-
-    .data-table tr:nth-child(even) td {
-      background: var(--surface);
-    }
-
-    @media (max-width: 600px) {
-      .data-table thead { display: none; }
-      .data-table tr { display: block; border-bottom: 2px solid var(--border); margin-bottom: 8px; }
-      .data-table td { display: block; padding: 6px 12px; border-bottom: none; }
-      .data-table td::before {
-        content: attr(data-label) ': ';
+      .lang-btn {
+        background: none;
+        border: 2px solid var(--brand);
+        border-radius: 6px;
+        color: var(--brand);
+        cursor: pointer;
+        font-size: 0.875rem;
         font-weight: 600;
-        color: var(--muted);
-        font-size: 0.75rem;
-        text-transform: uppercase;
+        padding: 6px 20px;
+        transition:
+          background 0.15s,
+          color 0.15s;
+      }
+
+      .lang-btn.active,
+      .lang-btn:hover {
+        background: var(--brand);
+        color: #fff;
+      }
+
+      /* ── Layout ──────────────────────────────────────────────────────────────── */
+      .container {
+        max-width: 760px;
+        margin: 0 auto;
+        padding: 40px 24px 80px;
+      }
+
+      /* ── Content sections ────────────────────────────────────────────────────── */
+      .lang-section {
+        display: none;
+      }
+      .lang-section.visible {
         display: block;
       }
-    }
 
-    /* ── Footer ──────────────────────────────────────────────────────────────── */
-    footer {
-      text-align: center;
-      font-size: 0.8rem;
-      color: var(--muted);
-      padding: 24px;
-      border-top: 1px solid var(--border);
-    }
-  </style>
-</head>
-<body>
+      .doc-title {
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: var(--brand);
+        margin-bottom: 6px;
+      }
 
-<header>
-  <div class="app-name">Falat</div>
-  <div class="tagline">Adatkezelési Tájékoztató &nbsp;/&nbsp; Privacy Policy</div>
-</header>
+      .doc-meta {
+        font-size: 0.875rem;
+        color: var(--muted);
+        margin-bottom: 32px;
+        padding-bottom: 20px;
+        border-bottom: 2px solid var(--brand-light);
+      }
 
-<div class="lang-bar" role="navigation" aria-label="Language selector">
-  <button class="lang-btn active" onclick="setLang('hu')" id="btn-hu">Magyar</button>
-  <button class="lang-btn" onclick="setLang('en')" id="btn-en">English</button>
-</div>
+      .doc-meta span + span::before {
+        content: " · ";
+      }
 
-<div class="container">
+      h2 {
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: var(--brand-dark);
+        margin-top: 36px;
+        margin-bottom: 12px;
+        padding-bottom: 6px;
+        border-bottom: 1px solid var(--border);
+      }
 
-  <!-- ═══════════════════════════════════════════════════════ HUNGARIAN ══════ -->
-  <div class="lang-section visible" id="section-hu">
+      h3 {
+        font-size: 0.975rem;
+        font-weight: 700;
+        color: var(--text);
+        margin-top: 20px;
+        margin-bottom: 8px;
+      }
 
-    <div class="doc-title">Adatkezelési Tájékoztató</div>
-    <div class="doc-meta">
-      <span>Alkalmazás: Falat</span>
-      <span>Hatályos: 2026. április 7</span>
+      p {
+        margin-bottom: 12px;
+        color: #374151;
+      }
+
+      ul {
+        margin: 8px 0 16px 20px;
+        color: #374151;
+      }
+
+      ul li {
+        margin-bottom: 6px;
+      }
+
+      /* ── Info card ───────────────────────────────────────────────────────────── */
+      .info-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-left: 4px solid var(--brand);
+        border-radius: 8px;
+        padding: 16px 20px;
+        margin-bottom: 24px;
+      }
+
+      .info-card .label {
+        font-size: 0.75rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: var(--muted);
+        margin-bottom: 8px;
+      }
+
+      .info-card .row {
+        display: flex;
+        gap: 8px;
+        font-size: 0.9rem;
+        margin-bottom: 4px;
+      }
+
+      .info-card .row strong {
+        min-width: 120px;
+        color: var(--muted);
+        font-weight: 500;
+      }
+
+      /* ── Table ───────────────────────────────────────────────────────────────── */
+      .data-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.9rem;
+        margin: 12px 0 20px;
+      }
+
+      .data-table th {
+        background: var(--brand);
+        color: #fff;
+        font-weight: 600;
+        padding: 10px 14px;
+        text-align: left;
+      }
+
+      .data-table td {
+        padding: 9px 14px;
+        border-bottom: 1px solid var(--border);
+        vertical-align: top;
+      }
+
+      .data-table tr:nth-child(even) td {
+        background: var(--surface);
+      }
+
+      @media (max-width: 600px) {
+        .data-table thead {
+          display: none;
+        }
+        .data-table tr {
+          display: block;
+          border-bottom: 2px solid var(--border);
+          margin-bottom: 8px;
+        }
+        .data-table td {
+          display: block;
+          padding: 6px 12px;
+          border-bottom: none;
+        }
+        .data-table td::before {
+          content: attr(data-label) ": ";
+          font-weight: 600;
+          color: var(--muted);
+          font-size: 0.75rem;
+          text-transform: uppercase;
+          display: block;
+        }
+      }
+
+      /* ── Delete Account section ─────────────────────────────────────────────── */
+      .delete-section {
+        background: #fff5f5;
+        border: 1px solid #fecaca;
+        border-left: 4px solid #dc2626;
+        border-radius: 8px;
+        padding: 20px 24px;
+        margin-top: 40px;
+      }
+
+      .delete-section h2 {
+        color: #b91c1c;
+        border-bottom-color: #fecaca;
+        margin-top: 0;
+      }
+
+      .delete-steps {
+        background: #fff;
+        border: 1px solid #fecaca;
+        border-radius: 6px;
+        padding: 14px 18px;
+        margin: 12px 0 16px;
+      }
+
+      .delete-steps ol {
+        margin: 0 0 0 18px;
+        color: #374151;
+      }
+
+      .delete-steps ol li {
+        margin-bottom: 6px;
+        font-weight: 500;
+      }
+
+      .delete-steps ol li span {
+        font-weight: 400;
+        color: #6b7280;
+      }
+
+      .delete-alt {
+        font-size: 0.9rem;
+        color: #374151;
+        margin-top: 8px;
+      }
+
+      .delete-alt a {
+        color: var(--brand);
+        font-weight: 600;
+      }
+
+      /* ── Delete nav button ───────────────────────────────────────────────────── */
+      .delete-nav-btn {
+        background: #dc2626;
+        border: 2px solid #dc2626;
+        border-radius: 6px;
+        color: #fff;
+        cursor: pointer;
+        font-size: 0.875rem;
+        font-weight: 700;
+        padding: 6px 18px;
+        text-decoration: none;
+        transition:
+          background 0.15s,
+          border-color 0.15s;
+        white-space: nowrap;
+      }
+
+      .delete-nav-btn:hover {
+        background: #b91c1c;
+        border-color: #b91c1c;
+      }
+
+      /* ── Footer ──────────────────────────────────────────────────────────────── */
+      footer {
+        text-align: center;
+        font-size: 0.8rem;
+        color: var(--muted);
+        padding: 24px;
+        border-top: 1px solid var(--border);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="app-name">Falat</div>
+      <div class="tagline">
+        Adatkezelési Tájékoztató &nbsp;/&nbsp; Privacy Policy
+      </div>
+    </header>
+
+    <div class="lang-bar" role="navigation" aria-label="Language selector">
+      <button class="lang-btn active" onclick="setLang('hu')" id="btn-hu">
+        Magyar
+      </button>
+      <button class="lang-btn" onclick="setLang('en')" id="btn-en">
+        English
+      </button>
+      <a
+        href="#delete-account"
+        class="delete-nav-btn"
+        onclick="handleDeleteNav(event)"
+        >Fiók törlése / Delete Account</a
+      >
     </div>
 
-    <div class="info-card">
-      <div class="label">Az Ön személyes adatait kezeli</div>
-      <div class="row"><strong>Név:</strong> <span>Dobák Dániel EV.</span></div>
-      <div class="row"><strong>Székhely:</strong> <span>5100 Jászberény, Pesti u. 45/A</span></div>
-      <div class="row"><strong>Adószám:</strong> <span>57832551-1-36</span></div>
-      <div class="row"><strong>E-mail:</strong> <span>dani . dobak @ gmail . com</span></div>
+    <div class="container">
+      <!-- ═══════════════════════════════════════════════════════ HUNGARIAN ══════ -->
+      <div class="lang-section visible" id="section-hu">
+        <div class="doc-title">Adatkezelési Tájékoztató</div>
+        <div class="doc-meta">
+          <span>Alkalmazás: Falat</span>
+          <span>Hatályos: 2026. április 7</span>
+        </div>
+
+        <div class="info-card">
+          <div class="label">Az Ön személyes adatait kezeli</div>
+          <div class="row">
+            <strong>Név:</strong> <span>Dobák Dániel EV.</span>
+          </div>
+          <div class="row">
+            <strong>Székhely:</strong>
+            <span>5100 Jászberény, Pesti u. 45/A</span>
+          </div>
+          <div class="row">
+            <strong>Adószám:</strong> <span>57832551-1-36</span>
+          </div>
+          <div class="row">
+            <strong>E-mail:</strong> <span>dani . dobak @ gmail . com</span>
+          </div>
+        </div>
+
+        <p>
+          Kérjük, figyelmesen olvassa el jelen adatkezelési tájékoztatónkat (a
+          továbbiakban: Tájékoztató), melyben személyes adatai kezelését érintő
+          gyakorlatunkat ismertetjük az Általános Adatvédelmi Rendelet (a GDPR,
+          azaz az Európai Parlament és Tanács 2016/679. rendelete) szerint. Ez a
+          Tájékoztató az Adatkezelő szolgáltatásait fogyasztóként igénybe vevő
+          személyekre (Ön) vonatkozik. Bemutatja, hogy az Adatkezelő hogyan
+          gyűjti, használja fel és osztja meg bizonyos esetekben harmadik
+          felekkel az Ön személyes adatait, továbbá információval szolgál az Ön
+          adatkezeléssel összefüggő „érintetti" jogairól.
+        </p>
+
+        <p>
+          Az Adatkezelő Dobák Dániel EV. elkötelezett e honlapot felkereső
+          egyének személyes adatainak és magánéletének védelme iránt. Jelen
+          tájékoztató és nyilatkozat mindenekelőtt az ügyfelek és
+          hírlevél-feliratkozók személyes adatainak interneten keresztül történő
+          bizalmas kezeléséről és védelméről szól, mindazonáltal ide tartoznak
+          az oldal látogatói is. Összefoglaljuk, hogy a tulajdonos milyen Önre
+          vonatkozó adatokat hogyan gyűjthet és használhat fel, illetve milyen
+          módon használhatják fel. Az adatok illetéktelen személyek részére nem
+          kerülnek átadásra és ezen tájékoztatóban meghatározott formában
+          kerülnek felhasználásra.
+        </p>
+
+        <p>
+          A szerződésekben egyedi esetekben az adatkezelés célja módosulhat,
+          mely az adott szerződésben rögzített feltételekkel történik.
+        </p>
+
+        <p>
+          A tájékoztató fontos információt nyújt Önnek személyes adatai
+          védelméről és ehhez fűződő jogairól. Ha a felhasználó nem fogadja el
+          ezen feltételeket, jogában áll a honlap használatát felfüggeszteni és
+          személyes adat megadása nélkül a böngészést befejezni.
+        </p>
+
+        <h2>1. Adatkezelő felelőssége és elérhetősége</h2>
+
+        <h3>1.1 Adatkezeléssel kapcsolatos információk</h3>
+        <p>
+          Jelen Tájékoztatóban ismertetett adatkezelések tekintetében Dobák
+          Dániel EV. az adatkezelő (a továbbiakban: Adatkezelő).
+        </p>
+        <p>
+          Adatvédelmi eljárásainkat érintő észrevétel, kérdés vagy panasz esetén
+          az alábbi elérhetőségeken vagyunk elérhetőek: Dobák Dániel EV. vagy
+          írjon a dani . dobak @ gmail . com e-mail címre.
+        </p>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Adatkezelő</th>
+              <th>Felelősségi körök</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="Adatkezelő">Dobák Dániel EV.</td>
+              <td data-label="Felelősségi körök">Összes tevékenység</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>
+          Választásának megfelelően Ön személyes adatai megadása nélkül is
+          jogosult hozzáférni weboldalainkhoz, viszont a böngészéshez
+          elengedhetetlen a süti – cookie szabályzat elfogadása,
+          hírlevél-feliratkozás esetén pedig az adatvédelmi tájékoztató és
+          nyilatkozat jóváhagyása. Személyes adat az összes információ, amely
+          közvetett vagy közvetlen módon, azonosító szám szerint vagy az ehhez
+          tartozó adatok alapján azonosítható természetes személyre vonatkozik.
+          Abban az esetben, hogyha az oldal Tulajdonosa az Ön személyes adatait
+          gyűjti, az adatgyűjtés átlátható és bizalmas adatkezeléssel történik.
+        </p>
+
+        <p>
+          Az Ön személyes adatai olyan információk, melyek segítségével az Ön
+          személye beazonosítható, például: vezetéknév, utónév, állampolgárság,
+          telefonszám, postacím, e-mail cím. Az Ön személyes adatait önkéntesen
+          megadott módon, a tulajdonos az oldalon történő böngészéskor gyűjti,
+          megjelölve minden esetben a cél eléréséhez szükségszerűen megadandó
+          adatokat. Ha nem kívánja megadni ezen adatokat, akkor nem férhet hozzá
+          a honlap egyes funkcióihoz, szolgáltatásaihoz. Az opcionálisan
+          megadandó adatok gyűjtése a felhasználói igények megismerését, a
+          honlap és szolgáltatások fejlesztését szolgálja.
+        </p>
+
+        <p>
+          A Tulajdonos minden intézkedést megtesz, hogy az általa kezelt
+          személyes adatok pontosak, naprakészek legyenek.
+        </p>
+
+        <h2>2. Kezelt személyes adatok</h2>
+
+        <p>Az alábbi személyes adatok kezelése történik:</p>
+        <ul>
+          <li>E-mail cím</li>
+          <li>
+            Rendszer információk (IP-cím, rendszer verzió, felbontás,
+            statisztika a honlapon megtekintett oldalakról, böngészési szokások,
+            viselkedési mintázat)
+          </li>
+          <li>Felhasználói preferenciák (allergének, étrend, konyhák)</li>
+          <li>Swipe előzmények (recept értékelések)</li>
+          <li>Vásárlási előzmények (RevenueCat-en keresztül)</li>
+          <li>Push értesítési token (értesítésekhez)</li>
+        </ul>
+
+        <h2>3. Adatkezelés időtartama</h2>
+        <ul>
+          <li>
+            Direkt marketing célú hozzájárulások tekintetében a felhasználó
+            hozzájárulásának visszavonásáig
+          </li>
+          <li>
+            Profiladatok tekintetében az utolsó bejelentkezéstől számított 4 év
+          </li>
+          <li>
+            Vásárlások adatai tekintetében a Számv. tv. 169. § (2) bekezdése
+            alapján 8 év
+          </li>
+        </ul>
+
+        <h2>4. Adattovábbítás feltételei</h2>
+        <p>
+          Az Adatkezelő az általa kezelt adatokat – a szükséges mértékben –
+          továbbíthatja a következő területeken tevékenykedő, általa kijelölt
+          személyek, valamint társaságok részére:
+        </p>
+        <ul>
+          <li>Adatfeldolgozás</li>
+          <li>Jogi képviselet</li>
+          <li>Jogviták kezelésére jogszabály alapján jogosult szervek</li>
+          <li>Kézbesítés</li>
+          <li>Könyvelés</li>
+          <li>Követeléskezelés</li>
+          <li>Marketing</li>
+          <li>Számlázás</li>
+        </ul>
+
+        <h2>5. Adatfeldolgozók</h2>
+        <p>
+          Applikációban történő vásárláskor az Adatkezelő (a Felhasználó által
+          megjelölt szállítási mód alapján) a Felhasználó nevét, e-mail címét és
+          telefonszámát – a továbbá a termék beszedendő (esetenként előre
+          kiegyenlített) vételárával kapcsolatos információt átadja a vásárlást
+          bonyolító cég számára, a termék Felhasználó részére történő
+          kézbesítése céljából.
+        </p>
+        <p>
+          A Felhasználó elfogadja e hozzájárulás szerint az általa választott
+          kiszállító cég saját Általános Szerződési Feltételeit.
+        </p>
+        <p>
+          A tulajdonos, Dobák Dániel EV. végzi az adatok kezelését. A
+          tulajdonoson kívül más cégek is részt vesznek a szerződéses ügyfelek
+          adatainak kezelésében, tárolásában.
+        </p>
+
+        <h3>Az adatkezelésben érintett cégek:</h3>
+        <ul>
+          <li><strong>Supabase:</strong> Adatbázis szolgáltató</li>
+          <li><strong>RevenueCat:</strong> Előfizetések kezelése</li>
+          <li><strong>Expo:</strong> Push értesítések kezelése</li>
+          <li>
+            <strong>Apple Inc.:</strong> App Store letöltés esetén, az Apple
+            általános, applikációkra vonatkozó szabályzata alapján
+          </li>
+          <li>
+            <strong>Google Inc.:</strong> 1600 Amphitheatre Parkway, Mountain
+            View, CA 94043, USA – levelező rendszer, felhőben történő adat és
+            fájl tárolás, online dokumentum kezelés, Google Drive, Google Docs,
+            Google Search Console, Google Analytics, Google Play, Google Play
+            Console, Google AdSense, Google Ads, Google Tag Manager, YouTube,
+            Blogger, Chrome böngésző támogatása
+          </li>
+          <li>
+            <strong>Facebook Ireland Ltd.:</strong> 4 Grand Canal Square, Grand
+            Canal Harbour, Dublin 2 Ireland – Facebook, Instagram, Messenger és
+            Facebook által kínált egyéb termékek, funkciók támogatása
+          </li>
+          <li>
+            <strong>Twitter International Company:</strong> One Cumberland
+            Place, Fenian Street, Dublin 2, D02 AX07 IRELAND – a Twitter által
+            kínált termékek, funkciók használata
+          </li>
+          <li>
+            Speciális esetekben a szerződés tartalmazhat további adatfeldolgozó
+            személyeket vagy cégeket.
+          </li>
+        </ul>
+
+        <h2>6. Adattulajdonosi jogok és jogérvényesítés</h2>
+        <p>
+          Amennyiben nem szeretné személyes adatai kereskedelmi ajánlatok
+          közlésére történő felhasználását, joga van mindezt indoklás nélkül
+          megtiltani. Törlési kérelmét írásban szükséges megküldenie az
+          Adatkezelő részére, e-mailben vagy postai levél formájában, a
+          megjelölt elérhetőségekre.
+        </p>
+
+        <h2>7. Kiskorúak védelme</h2>
+        <p>
+          Dobák Dániel EV. internetes weboldala, valamint megjelenéseinek
+          tartalma többnyire nem 13 év alatti kiskorúak részére szól. Szülei
+          vagy gondviselői kérhetik a gyermekre vonatkozó adatok kiadását,
+          törlését. Ha az Adatkezelő számára az adatkezelés, adatfeldolgozás
+          folyamán válik nyilvánvalóvá az életkor, abban az esetben a szülői
+          hozzájárulás beszerzése céljából az adatok felhasználhatók.
+        </p>
+        <p>
+          Törvényes képviselő hozzájárulása szükséges cselekvőképtelen és
+          korlátozottan cselekvőképes kiskorú személy nyilatkozatához, kivéve a
+          mindennapi életben tömegesen előforduló regisztrációt célzó és
+          különösebb megfontolást nem igénylő szolgáltatásrészeket.
+        </p>
+
+        <div class="delete-section" id="delete-account">
+          <h2>Fiók törlése</h2>
+          <p>
+            Fiókját bármikor, teljesen törölheti az alkalmazáson belül. A törlés
+            visszafordíthatatlan — minden személyes adata, beállítása és
+            előzménye véglegesen törlődik.
+          </p>
+
+          <div class="delete-steps">
+            <ol>
+              <li>
+                Nyissa meg a <strong>Profil</strong> lapot az alkalmazásban
+              </li>
+              <li>
+                Koppintson a <strong>Beállítások</strong> ikonra (fogaskerék,
+                jobb felső sarok)
+              </li>
+              <li>
+                Görgessen le a lap aljára, és koppintson a
+                <strong>Fiók törlése</strong> gombra
+              </li>
+              <li>Erősítse meg a törlést a megjelenő párbeszédablakban</li>
+            </ol>
+          </div>
+
+          <p class="delete-alt">
+            Ha az alkalmazáson belüli törlés nem érhető el, kérjük, küldjön
+            e-mailt az alábbi címre, és 30 napon belül töröljük fiókját:<br />
+            <a href="mailto:dani.dobak@gmail.com">dani . dobak @ gmail . com</a>
+          </p>
+          <p class="delete-alt">
+            A törlési kérelem tárgyaként kérjük, adja meg:
+            <em>„Fiók törlése – [regisztrált e-mail cím]"</em>
+          </p>
+        </div>
+      </div>
+      <!-- /#section-hu -->
+
+      <!-- ═══════════════════════════════════════════════════════ ENGLISH ════════ -->
+      <div class="lang-section" id="section-en">
+        <div class="doc-title">Privacy Policy</div>
+        <div class="doc-meta">
+          <span>App: Falat</span>
+          <span>Effective: 7 April 2026</span>
+        </div>
+
+        <div class="info-card">
+          <div class="label">Data Controller</div>
+          <div class="row">
+            <strong>Name:</strong> <span>Dobak Daniel EV.</span>
+          </div>
+          <div class="row">
+            <strong>Address:</strong>
+            <span>Hungary, 5100 Jaszbereny, Pesti Street 45/A</span>
+          </div>
+          <div class="row">
+            <strong>Tax number:</strong> <span>57832551-1-36</span>
+          </div>
+          <div class="row">
+            <strong>Email:</strong> <span>dani . dobak @ gmail . com</span>
+          </div>
+        </div>
+
+        <p>
+          Please read this Privacy Policy carefully. It describes how we handle
+          your personal data in accordance with the General Data Protection
+          Regulation (GDPR – Regulation (EU) 2016/679 of the European Parliament
+          and of the Council). This Policy applies to individuals who use the
+          Data Controller's services as consumers. It explains how we collect,
+          use, and in certain cases share your personal data with third parties,
+          and informs you of your rights as a data subject.
+        </p>
+
+        <p>
+          The Data Controller is committed to protecting the personal data and
+          privacy of individuals who visit this website. This policy primarily
+          concerns the confidential handling and protection of customers' and
+          newsletter subscribers' personal data over the internet, but it also
+          applies to general visitors. We summarise what data about you may be
+          collected and how it may be used. Data will not be disclosed to
+          unauthorised parties and will only be used as described in this
+          policy.
+        </p>
+
+        <p>
+          In individual contracts, the purpose of data processing may be
+          modified, subject to the terms set out in the relevant contract.
+        </p>
+
+        <p>
+          This policy provides important information about the protection of
+          your personal data and your related rights. If you do not accept these
+          terms, you are entitled to stop using the website and to cease
+          browsing without providing any personal data.
+        </p>
+
+        <h2>1. Data Controller – Responsibility and Contact</h2>
+
+        <h3>1.1 Data Processing Information</h3>
+        <p>
+          For the data processing activities described in this Policy, DD is the
+          data controller (hereinafter: Data Controller).
+        </p>
+        <p>
+          For comments, questions, or complaints regarding our data protection
+          practices, please contact us at: Dobak Daniel EV., or write to dani .
+          dobak @ gmail . com email address.
+        </p>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Data Controller</th>
+              <th>Scope of Responsibility</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="Data Controller">Dobak Daniel EV.</td>
+              <td data-label="Scope of Responsibility">All activities</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>
+          You may access our website without providing personal data; however,
+          browsing requires acceptance of the cookie policy, and subscribing to
+          our newsletter requires approval of this privacy notice. Personal data
+          means any information that directly or indirectly identifies a natural
+          person. When the website owner collects your personal data, it is done
+          transparently and with confidentiality.
+        </p>
+
+        <p>
+          Your personal data is information that can identify you — for example:
+          surname, first name, nationality, phone number, postal address, email
+          address. Your personal data is collected voluntarily when you browse
+          the site; fields required to fulfil a specific purpose are marked
+          accordingly. If you choose not to provide this data, you may not be
+          able to access certain features or services. Optional data is
+          collected to understand user needs and to improve the website and its
+          services.
+        </p>
+
+        <p>
+          The owner takes all measures to ensure that personal data processed is
+          accurate and up to date.
+        </p>
+
+        <h2>2. Personal Data Processed</h2>
+        <ul>
+          <li>Email address</li>
+          <li>
+            System information (IP address, OS version, screen resolution, page
+            view statistics, browsing habits, behaviour patterns)
+          </li>
+          <li>User preferences (allergens, diet type, cuisines)</li>
+          <li>Swipe history (recipe ratings)</li>
+          <li>Purchase history (via RevenueCat)</li>
+          <li>Push notification token (for notifications)</li>
+        </ul>
+
+        <h2>3. Retention Periods</h2>
+        <ul>
+          <li>Direct marketing consents: until the user withdraws consent</li>
+          <li>Profile data: 4 years from the last login</li>
+          <li>
+            Purchase data: 8 years in accordance with Section 169(2) of the
+            Accounting Act
+          </li>
+        </ul>
+
+        <h2>4. Data Transfer</h2>
+        <p>
+          The Data Controller may transfer the data it processes — to the extent
+          necessary — to the following categories of designated persons and
+          companies:
+        </p>
+        <ul>
+          <li>Data processing</li>
+          <li>Legal representation</li>
+          <li>Bodies authorised by law to handle disputes</li>
+          <li>Delivery</li>
+          <li>Accounting</li>
+          <li>Debt management</li>
+          <li>Marketing</li>
+          <li>Invoicing</li>
+        </ul>
+
+        <h2>5. Data Processors</h2>
+        <p>
+          When a purchase is made in the application, the Data Controller may
+          pass the user's name, email address, and phone number — along with
+          information about the purchase price — to the company processing the
+          transaction, for the purpose of delivering the product to the user.
+        </p>
+        <p>
+          By agreeing to this policy, the user also accepts the General Terms
+          and Conditions of their chosen delivery provider.
+        </p>
+        <p>
+          Data processing is carried out by DD. In addition to the owner, other
+          companies may also be involved in the management and storage of data
+          related to contracted clients.
+        </p>
+
+        <h3>Companies involved in data processing:</h3>
+        <ul>
+          <li><strong>Supabase:</strong> Database provider</li>
+          <li><strong>RevenueCat:</strong> Subscription management</li>
+          <li><strong>Expo:</strong> Push notification management</li>
+          <li>
+            <strong>Apple Inc.:</strong> For App Store downloads, subject to
+            Apple's general app policies
+          </li>
+          <li>
+            <strong>Google Inc.:</strong> 1600 Amphitheatre Parkway, Mountain
+            View, CA 94043, USA – email, cloud storage, document management,
+            Google Drive, Docs, Search Console, Analytics, Play, Play Console,
+            AdSense, Ads, Tag Manager, YouTube, Blogger, Chrome
+          </li>
+          <li>
+            <strong>Facebook Ireland Ltd.:</strong> 4 Grand Canal Square, Grand
+            Canal Harbour, Dublin 2, Ireland – Facebook, Instagram, Messenger
+            and other Facebook products
+          </li>
+          <li>
+            <strong>Twitter International Company:</strong> One Cumberland
+            Place, Fenian Street, Dublin 2, D02 AX07, Ireland – Twitter products
+            and features
+          </li>
+          <li>
+            In special cases, individual contracts may name additional data
+            processors.
+          </li>
+        </ul>
+
+        <h2>6. Your Rights as a Data Subject</h2>
+        <p>
+          If you do not wish your personal data to be used for sending
+          commercial offers, you have the right to prohibit this without giving
+          reasons. Deletion requests must be submitted in writing to the Data
+          Controller, by email or post, using the contact details provided.
+        </p>
+
+        <h2>7. Protection of Minors</h2>
+        <p>
+          The content of DD's website is generally not directed at children
+          under the age of 13. Parents or guardians may request the disclosure
+          or deletion of data relating to their child. If the Data Controller
+          becomes aware of a user's age during data processing, that information
+          may be used for the purpose of obtaining parental consent.
+        </p>
+        <p>
+          The consent of a legal representative is required for declarations
+          made by minors who lack or have limited legal capacity, except for
+          routine service registrations that do not require particular
+          consideration.
+        </p>
+
+        <div class="delete-section" id="delete-account-en">
+          <h2>Delete Account</h2>
+          <p>
+            You can permanently delete your account at any time from within the
+            app. Deletion is irreversible — all your personal data, preferences,
+            and history will be permanently removed.
+          </p>
+
+          <div class="delete-steps">
+            <ol>
+              <li>Open the <strong>Profile</strong> tab in the app</li>
+              <li>
+                Tap the <strong>Settings</strong> icon (gear icon, top-right
+                corner)
+              </li>
+              <li>
+                Scroll to the bottom of the page and tap
+                <strong>Delete Account</strong>
+              </li>
+              <li>Confirm the deletion in the dialog that appears</li>
+            </ol>
+          </div>
+
+          <p class="delete-alt">
+            If in-app deletion is unavailable, please send an email to the
+            address below and we will delete your account within 30 days:<br />
+            <a href="mailto:[EMAIL_PLACEHOLDER]">[EMAIL_PLACEHOLDER]</a>
+          </p>
+          <p class="delete-alt">
+            Please use the subject line:
+            <em>"Account Deletion – [registered email address]"</em>
+          </p>
+        </div>
+      </div>
+      <!-- /#section-en -->
     </div>
+    <!-- /.container -->
 
-    <p>Kérjük, figyelmesen olvassa el jelen adatkezelési tájékoztatónkat (a továbbiakban: Tájékoztató), melyben személyes adatai kezelését érintő gyakorlatunkat ismertetjük az Általános Adatvédelmi Rendelet (a GDPR, azaz az Európai Parlament és Tanács 2016/679. rendelete) szerint. Ez a Tájékoztató az Adatkezelő szolgáltatásait fogyasztóként igénybe vevő személyekre (Ön) vonatkozik. Bemutatja, hogy az Adatkezelő hogyan gyűjti, használja fel és osztja meg bizonyos esetekben harmadik felekkel az Ön személyes adatait, továbbá információval szolgál az Ön adatkezeléssel összefüggő „érintetti" jogairól.</p>
+    <footer>&copy; 2026 Falat &nbsp;·&nbsp; [Név] &nbsp;·&nbsp; [Email]</footer>
 
-    <p>Az Adatkezelő Dobák Dániel EV. elkötelezett e honlapot felkereső egyének személyes adatainak és magánéletének védelme iránt. Jelen tájékoztató és nyilatkozat mindenekelőtt az ügyfelek és hírlevél-feliratkozók személyes adatainak interneten keresztül történő bizalmas kezeléséről és védelméről szól, mindazonáltal ide tartoznak az oldal látogatói is. Összefoglaljuk, hogy a tulajdonos milyen Önre vonatkozó adatokat hogyan gyűjthet és használhat fel, illetve milyen módon használhatják fel. Az adatok illetéktelen személyek részére nem kerülnek átadásra és ezen tájékoztatóban meghatározott formában kerülnek felhasználásra.</p>
+    <script>
+      function setLang(lang) {
+        document.querySelectorAll(".lang-section").forEach(function (el) {
+          el.classList.toggle("visible", el.id === "section-" + lang);
+        });
+        document.querySelectorAll(".lang-btn").forEach(function (btn) {
+          btn.classList.toggle("active", btn.id === "btn-" + lang);
+        });
+        document.documentElement.lang = lang;
+      }
 
-    <p>A szerződésekben egyedi esetekben az adatkezelés célja módosulhat, mely az adott szerződésben rögzített feltételekkel történik.</p>
+      function handleDeleteNav(e) {
+        e.preventDefault();
+        var lang = document.documentElement.lang || "hu";
+        var targetId = lang === "en" ? "delete-account-en" : "delete-account";
+        var el = document.getElementById(targetId);
+        if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
 
-    <p>A tájékoztató fontos információt nyújt Önnek személyes adatai védelméről és ehhez fűződő jogairól. Ha a felhasználó nem fogadja el ezen feltételeket, jogában áll a honlap használatát felfüggeszteni és személyes adat megadása nélkül a böngészést befejezni.</p>
-
-    <h2>1. Adatkezelő felelőssége és elérhetősége</h2>
-
-    <h3>1.1 Adatkezeléssel kapcsolatos információk</h3>
-    <p>Jelen Tájékoztatóban ismertetett adatkezelések tekintetében Dobák Dániel EV. az adatkezelő (a továbbiakban: Adatkezelő).</p>
-    <p>Adatvédelmi eljárásainkat érintő észrevétel, kérdés vagy panasz esetén az alábbi elérhetőségeken vagyunk elérhetőek: Dobák Dániel EV. vagy írjon a dani . dobak @ gmail . com e-mail címre.</p>
-
-    <table class="data-table">
-      <thead>
-        <tr><th>Adatkezelő</th><th>Felelősségi körök</th></tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td data-label="Adatkezelő">Dobák Dániel EV.</td>
-          <td data-label="Felelősségi körök">Összes tevékenység</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <p>Választásának megfelelően Ön személyes adatai megadása nélkül is jogosult hozzáférni weboldalainkhoz, viszont a böngészéshez elengedhetetlen a süti – cookie szabályzat elfogadása, hírlevél-feliratkozás esetén pedig az adatvédelmi tájékoztató és nyilatkozat jóváhagyása. Személyes adat az összes információ, amely közvetett vagy közvetlen módon, azonosító szám szerint vagy az ehhez tartozó adatok alapján azonosítható természetes személyre vonatkozik. Abban az esetben, hogyha az oldal Tulajdonosa az Ön személyes adatait gyűjti, az adatgyűjtés átlátható és bizalmas adatkezeléssel történik.</p>
-
-    <p>Az Ön személyes adatai olyan információk, melyek segítségével az Ön személye beazonosítható, például: vezetéknév, utónév, állampolgárság, telefonszám, postacím, e-mail cím. Az Ön személyes adatait önkéntesen megadott módon, a tulajdonos az oldalon történő böngészéskor gyűjti, megjelölve minden esetben a cél eléréséhez szükségszerűen megadandó adatokat. Ha nem kívánja megadni ezen adatokat, akkor nem férhet hozzá a honlap egyes funkcióihoz, szolgáltatásaihoz. Az opcionálisan megadandó adatok gyűjtése a felhasználói igények megismerését, a honlap és szolgáltatások fejlesztését szolgálja.</p>
-
-    <p>A Tulajdonos minden intézkedést megtesz, hogy az általa kezelt személyes adatok pontosak, naprakészek legyenek.</p>
-
-    <h2>2. Kezelt személyes adatok</h2>
-
-    <p>Az alábbi személyes adatok kezelése történik:</p>
-    <ul>
-      <li>E-mail cím</li>
-      <li>Rendszer információk (IP-cím, rendszer verzió, felbontás, statisztika a honlapon megtekintett oldalakról, böngészési szokások, viselkedési mintázat)</li>
-      <li>Felhasználói preferenciák (allergének, étrend, konyhák)</li>
-      <li>Swipe előzmények (recept értékelések)</li>
-      <li>Vásárlási előzmények (RevenueCat-en keresztül)</li>
-      <li>Push értesítési token (értesítésekhez)</li>
-    </ul>
-
-    <h2>3. Adatkezelés időtartama</h2>
-    <ul>
-      <li>Direkt marketing célú hozzájárulások tekintetében a felhasználó hozzájárulásának visszavonásáig</li>
-      <li>Profiladatok tekintetében az utolsó bejelentkezéstől számított 4 év</li>
-      <li>Vásárlások adatai tekintetében a Számv. tv. 169. § (2) bekezdése alapján 8 év</li>
-    </ul>
-
-    <h2>4. Adattovábbítás feltételei</h2>
-    <p>Az Adatkezelő az általa kezelt adatokat – a szükséges mértékben – továbbíthatja a következő területeken tevékenykedő, általa kijelölt személyek, valamint társaságok részére:</p>
-    <ul>
-      <li>Adatfeldolgozás</li>
-      <li>Jogi képviselet</li>
-      <li>Jogviták kezelésére jogszabály alapján jogosult szervek</li>
-      <li>Kézbesítés</li>
-      <li>Könyvelés</li>
-      <li>Követeléskezelés</li>
-      <li>Marketing</li>
-      <li>Számlázás</li>
-    </ul>
-
-    <h2>5. Adatfeldolgozók</h2>
-    <p>Applikációban történő vásárláskor az Adatkezelő (a Felhasználó által megjelölt szállítási mód alapján) a Felhasználó nevét, e-mail címét és telefonszámát – a továbbá a termék beszedendő (esetenként előre kiegyenlített) vételárával kapcsolatos információt átadja a vásárlást bonyolító cég számára, a termék Felhasználó részére történő kézbesítése céljából.</p>
-    <p>A Felhasználó elfogadja e hozzájárulás szerint az általa választott kiszállító cég saját Általános Szerződési Feltételeit.</p>
-    <p>A tulajdonos, Dobák Dániel EV. végzi az adatok kezelését. A tulajdonoson kívül más cégek is részt vesznek a szerződéses ügyfelek adatainak kezelésében, tárolásában.</p>
-
-    <h3>Az adatkezelésben érintett cégek:</h3>
-    <ul>
-      <li><strong>Supabase:</strong> Adatbázis szolgáltató</li>
-      <li><strong>RevenueCat:</strong> Előfizetések kezelése</li>
-      <li><strong>Expo:</strong> Push értesítések kezelése</li>
-      <li><strong>Apple Inc.:</strong> App Store letöltés esetén, az Apple általános, applikációkra vonatkozó szabályzata alapján</li>
-      <li><strong>Google Inc.:</strong> 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA – levelező rendszer, felhőben történő adat és fájl tárolás, online dokumentum kezelés, Google Drive, Google Docs, Google Search Console, Google Analytics, Google Play, Google Play Console, Google AdSense, Google Ads, Google Tag Manager, YouTube, Blogger, Chrome böngésző támogatása</li>
-      <li><strong>Facebook Ireland Ltd.:</strong> 4 Grand Canal Square, Grand Canal Harbour, Dublin 2 Ireland – Facebook, Instagram, Messenger és Facebook által kínált egyéb termékek, funkciók támogatása</li>
-      <li><strong>Twitter International Company:</strong> One Cumberland Place, Fenian Street, Dublin 2, D02 AX07 IRELAND – a Twitter által kínált termékek, funkciók használata</li>
-      <li>Speciális esetekben a szerződés tartalmazhat további adatfeldolgozó személyeket vagy cégeket.</li>
-    </ul>
-
-    <h2>6. Adattulajdonosi jogok és jogérvényesítés</h2>
-    <p>Amennyiben nem szeretné személyes adatai kereskedelmi ajánlatok közlésére történő felhasználását, joga van mindezt indoklás nélkül megtiltani. Törlési kérelmét írásban szükséges megküldenie az Adatkezelő részére, e-mailben vagy postai levél formájában, a megjelölt elérhetőségekre.</p>
-
-    <h2>7. Kiskorúak védelme</h2>
-    <p>Dobák Dániel EV. internetes weboldala, valamint megjelenéseinek tartalma többnyire nem 13 év alatti kiskorúak részére szól. Szülei vagy gondviselői kérhetik a gyermekre vonatkozó adatok kiadását, törlését. Ha az Adatkezelő számára az adatkezelés, adatfeldolgozás folyamán válik nyilvánvalóvá az életkor, abban az esetben a szülői hozzájárulás beszerzése céljából az adatok felhasználhatók.</p>
-    <p>Törvényes képviselő hozzájárulása szükséges cselekvőképtelen és korlátozottan cselekvőképes kiskorú személy nyilatkozatához, kivéve a mindennapi életben tömegesen előforduló regisztrációt célzó és különösebb megfontolást nem igénylő szolgáltatásrészeket.</p>
-
-  </div><!-- /#section-hu -->
-
-  <!-- ═══════════════════════════════════════════════════════ ENGLISH ════════ -->
-  <div class="lang-section" id="section-en">
-
-    <div class="doc-title">Privacy Policy</div>
-    <div class="doc-meta">
-      <span>App: Falat</span>
-      <span>Effective: 7 April 2026</span>
-    </div>
-
-    <div class="info-card">
-      <div class="label">Data Controller</div>
-      <div class="row"><strong>Name:</strong> <span>Dobak Daniel EV.</span></div>
-      <div class="row"><strong>Address:</strong> <span>Hungary, 5100 Jaszbereny, Pesti Street 45/A</span></div>
-      <div class="row"><strong>Tax number:</strong> <span>57832551-1-36</span></div>
-      <div class="row"><strong>Email:</strong> <span>dani . dobak @ gmail . com</span></div>
-    </div>
-
-    <p>Please read this Privacy Policy carefully. It describes how we handle your personal data in accordance with the General Data Protection Regulation (GDPR – Regulation (EU) 2016/679 of the European Parliament and of the Council). This Policy applies to individuals who use the Data Controller's services as consumers. It explains how we collect, use, and in certain cases share your personal data with third parties, and informs you of your rights as a data subject.</p>
-
-    <p>The Data Controller is committed to protecting the personal data and privacy of individuals who visit this website. This policy primarily concerns the confidential handling and protection of customers' and newsletter subscribers' personal data over the internet, but it also applies to general visitors. We summarise what data about you may be collected and how it may be used. Data will not be disclosed to unauthorised parties and will only be used as described in this policy.</p>
-
-    <p>In individual contracts, the purpose of data processing may be modified, subject to the terms set out in the relevant contract.</p>
-
-    <p>This policy provides important information about the protection of your personal data and your related rights. If you do not accept these terms, you are entitled to stop using the website and to cease browsing without providing any personal data.</p>
-
-    <h2>1. Data Controller – Responsibility and Contact</h2>
-
-    <h3>1.1 Data Processing Information</h3>
-    <p>For the data processing activities described in this Policy, DD is the data controller (hereinafter: Data Controller).</p>
-    <p>For comments, questions, or complaints regarding our data protection practices, please contact us at: Dobak Daniel EV., or write to dani . dobak @ gmail . com email address.</p>
-
-    <table class="data-table">
-      <thead>
-        <tr><th>Data Controller</th><th>Scope of Responsibility</th></tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td data-label="Data Controller">Dobak Daniel EV.</td>
-          <td data-label="Scope of Responsibility">All activities</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <p>You may access our website without providing personal data; however, browsing requires acceptance of the cookie policy, and subscribing to our newsletter requires approval of this privacy notice. Personal data means any information that directly or indirectly identifies a natural person. When the website owner collects your personal data, it is done transparently and with confidentiality.</p>
-
-    <p>Your personal data is information that can identify you — for example: surname, first name, nationality, phone number, postal address, email address. Your personal data is collected voluntarily when you browse the site; fields required to fulfil a specific purpose are marked accordingly. If you choose not to provide this data, you may not be able to access certain features or services. Optional data is collected to understand user needs and to improve the website and its services.</p>
-
-    <p>The owner takes all measures to ensure that personal data processed is accurate and up to date.</p>
-
-    <h2>2. Personal Data Processed</h2>
-    <ul>
-      <li>Email address</li>
-      <li>System information (IP address, OS version, screen resolution, page view statistics, browsing habits, behaviour patterns)</li>
-      <li>User preferences (allergens, diet type, cuisines)</li>
-      <li>Swipe history (recipe ratings)</li>
-      <li>Purchase history (via RevenueCat)</li>
-      <li>Push notification token (for notifications)</li>
-    </ul>
-
-    <h2>3. Retention Periods</h2>
-    <ul>
-      <li>Direct marketing consents: until the user withdraws consent</li>
-      <li>Profile data: 4 years from the last login</li>
-      <li>Purchase data: 8 years in accordance with Section 169(2) of the Accounting Act</li>
-    </ul>
-
-    <h2>4. Data Transfer</h2>
-    <p>The Data Controller may transfer the data it processes — to the extent necessary — to the following categories of designated persons and companies:</p>
-    <ul>
-      <li>Data processing</li>
-      <li>Legal representation</li>
-      <li>Bodies authorised by law to handle disputes</li>
-      <li>Delivery</li>
-      <li>Accounting</li>
-      <li>Debt management</li>
-      <li>Marketing</li>
-      <li>Invoicing</li>
-    </ul>
-
-    <h2>5. Data Processors</h2>
-    <p>When a purchase is made in the application, the Data Controller may pass the user's name, email address, and phone number — along with information about the purchase price — to the company processing the transaction, for the purpose of delivering the product to the user.</p>
-    <p>By agreeing to this policy, the user also accepts the General Terms and Conditions of their chosen delivery provider.</p>
-    <p>Data processing is carried out by DD. In addition to the owner, other companies may also be involved in the management and storage of data related to contracted clients.</p>
-
-    <h3>Companies involved in data processing:</h3>
-    <ul>
-      <li><strong>Supabase:</strong> Database provider</li>
-      <li><strong>RevenueCat:</strong> Subscription management</li>
-      <li><strong>Expo:</strong> Push notification management</li>
-      <li><strong>Apple Inc.:</strong> For App Store downloads, subject to Apple's general app policies</li>
-      <li><strong>Google Inc.:</strong> 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA – email, cloud storage, document management, Google Drive, Docs, Search Console, Analytics, Play, Play Console, AdSense, Ads, Tag Manager, YouTube, Blogger, Chrome</li>
-      <li><strong>Facebook Ireland Ltd.:</strong> 4 Grand Canal Square, Grand Canal Harbour, Dublin 2, Ireland – Facebook, Instagram, Messenger and other Facebook products</li>
-      <li><strong>Twitter International Company:</strong> One Cumberland Place, Fenian Street, Dublin 2, D02 AX07, Ireland – Twitter products and features</li>
-      <li>In special cases, individual contracts may name additional data processors.</li>
-    </ul>
-
-    <h2>6. Your Rights as a Data Subject</h2>
-    <p>If you do not wish your personal data to be used for sending commercial offers, you have the right to prohibit this without giving reasons. Deletion requests must be submitted in writing to the Data Controller, by email or post, using the contact details provided.</p>
-
-    <h2>7. Protection of Minors</h2>
-    <p>The content of DD's website is generally not directed at children under the age of 13. Parents or guardians may request the disclosure or deletion of data relating to their child. If the Data Controller becomes aware of a user's age during data processing, that information may be used for the purpose of obtaining parental consent.</p>
-    <p>The consent of a legal representative is required for declarations made by minors who lack or have limited legal capacity, except for routine service registrations that do not require particular consideration.</p>
-
-  </div><!-- /#section-en -->
-
-</div><!-- /.container -->
-
-<footer>
-  &copy; 2026 Falat &nbsp;·&nbsp; [Név] &nbsp;·&nbsp; [Email]
-</footer>
-
-<script>
-  function setLang(lang) {
-    document.querySelectorAll('.lang-section').forEach(function(el) {
-      el.classList.toggle('visible', el.id === 'section-' + lang);
-    });
-    document.querySelectorAll('.lang-btn').forEach(function(btn) {
-      btn.classList.toggle('active', btn.id === 'btn-' + lang);
-    });
-    document.documentElement.lang = lang;
-  }
-</script>
-
-</body>
+      // On page load, if hash is #delete-account, ensure HU section is visible and scroll
+      (function () {
+        if (window.location.hash === "#delete-account") {
+          setLang("hu");
+          window.addEventListener("load", function () {
+            var el = document.getElementById("delete-account");
+            if (el) el.scrollIntoView({ block: "start" });
+          });
+        }
+      })();
+    </script>
+  </body>
 </html>
